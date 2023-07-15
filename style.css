@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --Dark-slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    margin-block: 1em;
+}
+
+ul li {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.5em;
+    gap: 1em;
+}
+
+.text {
+    padding: 1.5em 1em;
+    color: var(--Charcoal-Grey);
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+picture img {
+    width: 100vw;
+}
+
+h1 {
+    padding-block-end: 0.5em;
+    color: var(--Dark-slate-Grey);
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--Dark-slate-Grey);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+button {
+    padding: 1.3em;
+    border-radius: 0.5rem;
+    border: 0.5px solid var(--Grey);
+    margin-block-end: 1em;
+    margin-block-start: 0.5em;
+}
+
+input::placeholder {
+    color: var(--Grey);
+}
+
+button {
+    background-color: var(--Dark-slate-Grey);
+    color: var(--White);
+    font-weight: 700;
+    border: none;
+    transition: 0.4s ease;
+}
+
+button:hover {
+    background-color: var(--Tomato);
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    display: none;
+    color: var(--Tomato);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.success {
+    display: none;
+    gap: 1em;
+    color: var(--Dark-slate-Grey);
+    background-color: white;
+    flex-direction: column;
+    font-family: "Roboto";
+    padding: 2em;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.success div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    transform: translateY(35%);
+}
+
+.success p {
+    line-height: 1.5rem;
+    font-size: (0.7rem, 1vw + 1rem, 1.1rem);
+    overflow-wrap: break-word;
+}
+
+.success img {
+    width: clamp(2.5em, 14vw, 4em)
+}
+
+.success h1 {
+    font-size: clamp(1.5em, 3vw + 1rem, 3.5em);
+    padding: 0;
+}
+
+span {
+    font-weight: 700;
+}
+
+@media (min-width: 600px){
+    body {
+        height: 100vh;
+        background-color: var(--Dark-slate-Grey);
+    }
+    .main {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        flex-direction: row-reverse;
+        padding: 1em;
+        background-color: var(--White);
+        border-radius: 2em;
+        width: clamp(40em, 60vw, 60em);
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    div.text {
+        padding: 2em;
+    }
+
+    picture img {
+        width: 100%;
+    }
+
+    span {
+        font-weight: 700;
+    }
+
+    .success {
+        color: var(--Dark-slate-Grey);
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        aspect-ratio: 1;
+        width: clamp(20em, 30vw, 30em);
+        background-color: white;
+        border-radius: 2em;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2em;
+        gap: 1em;
+        font-family: "Roboto";
+        height: auto;
+    }
+
+    .success p {
+        font-size: clamp(0.8rem, 1vw + 0.5rem, 1rem);
+    }
+
+    .success img {
+        width: clamp(2em, 3em, 4em);
+    }
+
+    .success h1 {
+        font-size: clamp(2rem, 3vw + 1rem, 2.5rem);
+        padding: 0;
+    }
+
+    .success p {
+        line-height: 1.5rem;
+        overflow-wrap: break-word;
+    }
+
+    .success div {
+        transform: translateY(0%);
+    }
+}
